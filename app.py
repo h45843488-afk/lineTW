@@ -45,20 +45,15 @@ st.markdown(
     <style>
     /* 縮小 st.title 的 H1 大標題字體 (可依需求調整 1.4rem ~ 1.8rem) */
     h1 {
-    font-size: 1.4rem !important;
-    padding-top: 0rem !important;
-    padding-bottom: 0.5rem !important;
-}
-
-/* 下方可繼續接你原本的手機 RWD 與雙排/每行3個適配 CSS */
-
-/* 隱藏右下角 Streamlit Cloud 按鈕 */
-[data-testid="stStatusWidget"] {
-    display: none !important;
-}
-
-</style>
-""",
+        font-size: 1.4rem !important;
+        padding-top: 0rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+    
+    /* 下方可繼續接你原本的手機 RWD 與雙排/每行3個適配 CSS */
+    
+    </style>
+    """,
     unsafe_allow_html=True
 )
 
