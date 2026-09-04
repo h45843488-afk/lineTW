@@ -19,6 +19,20 @@ import streamlit.components.v1 as components
 from data_fetcher import fetch_60min_kline, get_realtime_dde
 from risk_card import render_risk_card
 
+# ==================== 隱藏 Streamlit 圖示與控制列 ====================
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            [data-testid="stToolbar"] {visibility: hidden !important;}
+            [data-testid="stStatusWidget"] {visibility: hidden !important;}
+            .stAppDeployButton {aria-hidden: true; display: none !important;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+# ===================================================================
+
 
 def render_html_iframe(
     html_code: str, height: int = 600, scrolling: bool = False
