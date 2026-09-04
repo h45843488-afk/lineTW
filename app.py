@@ -19,17 +19,6 @@ import streamlit.components.v1 as components
 from data_fetcher import fetch_60min_kline, get_realtime_dde
 from risk_card import render_risk_card
 
-# ==================== 安全隱藏 (保留側邊欄控制) ====================
-hide_streamlit_style = """
-            <style>
-            /* 隱藏頁尾與頂部裝飾線，但不影響側邊欄箭頭 */
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            </style>
-            """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-# ===================================================================
-
 
 def render_html_iframe(
     html_code: str, height: int = 600, scrolling: bool = False
