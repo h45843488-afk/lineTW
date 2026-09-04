@@ -19,15 +19,27 @@ import streamlit.components.v1 as components
 from data_fetcher import fetch_60min_kline, get_realtime_dde
 from risk_card import render_risk_card
 
-# ==================== 隱藏 Streamlit 圖示與控制列 ====================
+# ==================== 隱藏 Streamlit 雲端圖示與右下角按鈕 ====================
 hide_streamlit_style = """
             <style>
-            #MainMenu {visibility: hidden;}
-            footer {visibility: hidden;}
-            header {visibility: hidden;}
-            [data-testid="stToolbar"] {visibility: hidden !important;}
-            [data-testid="stStatusWidget"] {visibility: hidden !important;}
-            .stAppDeployButton {aria-hidden: true; display: none !important;}
+            /* 隱藏頂部選單與 Header */
+            #MainMenu {visibility: hidden !important;}
+            header {visibility: hidden !important;}
+            footer {visibility: hidden !important;}
+            
+            /* 隱藏右下角 Manage App / Viewer Badge 圖示 */
+            [data-testid="stToolbar"] {display: none !important;}
+            [data-testid="stStatusWidget"] {display: none !important;}
+            [data-testid="stDecoration"] {display: none !important;}
+            .stAppDeployButton {display: none !important;}
+            
+            /* 強制隱藏所有 Floating Badge 懸浮元件 */
+            div[class*="viewerBadge"] {display: none !important;}
+            div[class*="styles_viewerBadge"] {display: none !important;}
+            iframe[title="streamlit_badge"] {display: none !important;}
+            
+            /* 針對手機版右下角內建按鈕的隱藏 */
+            button[title="View app in Streamlit Community Cloud"] {display: none !important;}
             </style>
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
